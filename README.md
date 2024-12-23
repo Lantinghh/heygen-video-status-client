@@ -109,7 +109,7 @@ Final Status: completed
 ## 📝 **Future Improvements**
 
 - Support asynchronous requests with `asyncio`.  
-- Add logging and advanced error recovery.  
+- Add advanced error recovery.  
 - Create more robust unit and edge case tests.  
 
 ---
