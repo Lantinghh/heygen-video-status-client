@@ -4,16 +4,16 @@ import random
 
 app = Flask(__name__)
 
-# 模拟延迟和状态
+# Simulate delays and states
 START_TIME = time.time()
-DELAY = random.randint(5, 15)  # 随机延迟5到15秒
+DELAY = random.randint(5, 15)  #  Random delay of 5 to 15 seconds
 
 @app.route('/status', methods=['GET'])
 def status():
     elapsed = time.time() - START_TIME
     if elapsed < DELAY:
         return jsonify({"result": "pending"})
-    elif random.random() < 0.1:  # 10% 概率返回错误
+    elif random.random() < 0.1:  # 10% Probability of returning an error
         return jsonify({"result": "error"})
     else:
         return jsonify({"result": "completed"})
