@@ -1,6 +1,7 @@
 import requests
 import time
 import logging
+from security import safe_requests
 
 # Configure logging
 logging.basicConfig(
@@ -23,7 +24,7 @@ class VideoStatusClient:
 
         while retries < self.max_retries:
             try:
-                response = requests.get(f"{self.server_url}/status")
+                response = safe_requests.get(f"{self.server_url}/status")
                 response.raise_for_status()
                 result = response.json().get("result")
 
